@@ -53,9 +53,6 @@ export const LayoutProvider = (props) => {
     const [locale, setLocale] = useState(localStorage.getItem("locale"));
     const [loader, setLoader] = useState(false);
 
-    /* Services */
-    const { getSystemSettingDetails } = CommonServices;
-
     useEffect(() => {
         router.events.on('routeChangeComplete', (url) => {
             updateLayoutConfigState();
@@ -82,14 +79,6 @@ export const LayoutProvider = (props) => {
             setLocale("ja");
             setLocaleJson(jpJson);
         }
-
-        /* Fetch default API details */
-
-        // Fetch system settings details
-        getSystemSettingDetails((response) => {
-            const data = response.data.model;
-            dispatch(setLayout(data));
-        });
     }, [])
 
 

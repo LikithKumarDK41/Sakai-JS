@@ -1,49 +1,3 @@
-export const MailSettingsOption1 = [
-    { name: 'なし', value: 0 },
-    { name: '1時間毎', value: 1 },
-    { name: '2時間毎', value: 2 },
-    { name: '3時間毎', value: 3 },
-    { name: '4時間毎', value: 4 },
-    { name: '6時間毎', value: 6 },
-    { name: '毎日', value: 8 },
-    { name: '毎日2回', value: 16 },
-];
-
-export const mapScaleRateOptions = [
-    { value:"",name: "--"},
-    { value: "1", name: "1" },
-    { value: "2", name: "2" },
-    { value: "3", name: "3" },
-    { value: "4", name: "4" },
-    { value: "5", name: "5" },
-    { value: "6", name: "6" },
-    { value: "7", name: "7" },
-    { value: "8", name: "8" },
-    { value: "9", name: "9" },
-    { value: "10", name: "10" },
-    { value: "11", name: "11" },
-    { value: "12", name: "12" },
-    { value: "13", name: "13" },
-    { value: "14", name: "14" },
-    { value: "15", name: "15" },
-    { value: "16", name: "16" },
-    { value: "17", name: "17" },
-    { value: "18", name: "18" },
-    { value: "19", name: "19" },
-    { value: "20", name: "20" },
-    { value: "21", name: "21" },
-    { value: "22", name: "22" },
-    { value: "23", name: "23" },
-    { value: "24", name: "24" },
-    { value: "25", name: "25" },
-];
-
-export const urlRegister = [
-    'pre-register',
-    'pre-register-list',
-    'privacy'
-]
-
 export const prefectures = [
     { value: "", name: '--' },
     { value: 1, name: '北海道' },
@@ -146,17 +100,13 @@ export const prefectures_en = [
     { value: 47, name: 'Okinawa' },
 ];
 
-export const staff_dashboard_status_en = ['Maximum Capacity', 'Total Family', 'Blank'];
-
-export const staff_dashboard_status_jp = ['避難可能人数', '現在の避難者数', '追加受入可能人数'];
-
 export const gender_jp = [
     { value: "", name: '--' },
     { value: "1", name: '男' },
     { value: "2", name: '女' },
     { value: "3", name: '答えたくない' },
-  ];
-  
+];
+
 export const gender_en = [
     { value: "", name: '--' },
     { value: "1", name: 'Male' },
@@ -165,7 +115,7 @@ export const gender_en = [
 ];
 
 export const prefecturesCombined = {
-    0: { en: '', ja: '' }, 
+    0: { en: '', ja: '' },
     1: { en: 'Hokkaido', ja: '北海道' },
     2: { en: 'Aomori', ja: '青森県' },
     3: { en: 'Iwate', ja: '岩手県' },
@@ -214,5 +164,3 @@ export const prefecturesCombined = {
     46: { en: 'Kagoshima', ja: '鹿児島県' },
     47: { en: 'Okinawa', ja: '沖縄県' },
 };
-
-export const default_place_id = [1,2,3,4];

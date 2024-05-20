@@ -1,7 +1,7 @@
 import { Button as PrimeReactButton } from "primereact/button";
 
 export const Button = (props) => {
-  const { parentClass, parentStyle, buttonProps = {} } = props;
+  const { parentClassName, parentStyle, buttonProps = {} } = props;
   const {
     hoverBg,
     custom,
@@ -11,28 +11,19 @@ export const Button = (props) => {
     bg,
     rounded,
     isLoading,
-    export: isExport,
-    create: isCreate,
-    import: isImport,
-    delete: isDelete,
+    forward: isForward,
     ...restProps
   } = buttonProps;
   let updatedIcon = icon;
-  if (isExport) {
-    updatedIcon = "pi pi-download";
-  } else if (isCreate) {
-    updatedIcon = "pi pi-plus";
-  } else if (isImport) {
-    updatedIcon = "pi pi-upload";
-  } else if (isDelete) {
-    updatedIcon = "pi pi-trash";
+  if (isForward) {
+    updatedIcon="pi pi-angle-right";
   }
 
   return (
-    <div className={`${parentClass}`} style={parentStyle}>
+    <div className={`${parentClassName}`} style={parentStyle}>
       <PrimeReactButton
         className={`${bg} ${hoverBg} ${custom || "custom-button"
-          }  ${buttonClass} font-medium`}
+          }  ${buttonClass} font-medium border-noround`}
         label={text}
         rounded={"true"}
         icon={isLoading ? "pi pi-spin pi-spinner" : icon || updatedIcon}

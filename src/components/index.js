@@ -11,7 +11,7 @@ import { Button, ButtonRounded } from "@/components/button";
 import { RadioBtn } from "@/components/radioButton";
 import { InputFile } from "@/components/upload";
 import { CardSpinner } from "@/components/spinner";
-import { Input, TextArea, InputNumber, InputGroup, InputDropdown, MultiSelect, DropdownSelect, InputGroups, Password } from "@/components/input";
+import { Input, TextArea, InputNumber, InputGroup, InputDropdown, MultiSelect, DropdownSelect, InputGroups, Password ,InputOtp } from "@/components/input";
 import { NotFound } from "@/components/dataNotFound";
 import AudioRecorder from "@/components/audio";
 import Doughnut from "@/components/chart";
@@ -52,5 +52,6 @@ export {
   CustomHeader,
   DateTime,
   Calendar,
-  DateTimeDisplay
+  DateTimeDisplay,
+  InputOtp
 }

@@ -31,6 +31,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+      <link rel="icon" href="/layout/images/Group 316.png" />
         <link id="theme-css" href={`/themes/default/theme.css`} rel="stylesheet"></link>
       </head>
       <body className={inter.className}>

@@ -7,9 +7,7 @@ import { Dropdown as Drp } from "antd";
 import { MultiSelect as MulSel } from "primereact/multiselect";
 import { Button } from "primereact/button";
 import { InputTextarea } from "primereact/inputtextarea";
-
 import { AudioRecorder, NormalLabel } from "@/components";
-import { InputOTP as Otp} from "antd-input-otp";
 
 export const Input = (props) => {
   const {
@@ -674,20 +672,3 @@ export const InputGroups = (props) => {
     </div>
   );
 };
-
-export const InputOtp =(props)=>{
-  const {
-    otpParentClassName,
-    otpParentStyle,
-    onChange,
-    value,
-    length,
-    inputType,
-    ...restProps
-  } = props;
-  return(
-    <div className={otpParentClassName} style={otpParentStyle}>
-    <Otp onChange={onChange} value={value} length={length} inputType={inputType} {...restProps} />
-    </div>
-  )
-}

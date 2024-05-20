@@ -7,7 +7,7 @@ import { NormalCheckBox } from "@/components/checkbox";
 import { ToggleSwitch, InputSwitch } from "@/components/switch";
 import { DND } from "@/components/dragNdrop";
 import { GoogleMapComponent, GoogleMapMultiMarkerComponent } from "@/components/map";
-import { Button, ButtonRounded } from "@/components/button";
+import { Button, ButtonRounded, StatusButton } from "@/components/button";
 import { RadioBtn } from "@/components/radioButton";
 import { InputFile } from "@/components/upload";
 import { CardSpinner } from "@/components/spinner";
@@ -52,5 +52,6 @@ export {
   CustomHeader,
   DateTime,
   Calendar,
-  DateTimeDisplay
+  DateTimeDisplay,
+  StatusButton
 }

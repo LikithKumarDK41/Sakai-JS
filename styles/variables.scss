@@ -12,15 +12,19 @@ $userDashBoardHeight: 250px;
 $userDashboardHeightSm: 180px;
 $userDashBoardHeight-c: 350px;
 $userDashboardHeightSm-c: 280px;
+$headerLineHeight: 24px;
+$headerHeight: 34px;
 
 /* width */
 $sNoWidth: 60px;
 $actionEditDeleteWidth: 200px;
 $userDashBoardWidth: 500px;
 $fullWidth: 100%;
+$headerButtonWidth: 88px;
+$headerLetterSpacing: 0.04em;
 
 /* Transition duration */
-$transitionDuration: .2s;
+$transitionDuration: 0.2s;
 
 /* Fonts sizes */
 $commonFontSize: 16px;
@@ -42,6 +46,7 @@ $subHeaderFontSize: 18px;
 $commonFloatLabelFontSize: 14px;
 $detailsHeaderFontSize: 18px;
 $detailsBodyFontSize: 16px;
+$headerFontSize: 16px;
 
 /* Fonts weights */
 $commonFontWeight: 500;
@@ -53,6 +58,7 @@ $buttonFontWeight: 700;
 $pageHeadersFontWeight: 700;
 $authHeaderFontWeight: 700;
 $detailsHeaderFontWeight: 700;
+$headerFontWeight: 500;
 
 /* Radius */
 $commonRadius: 5px;
@@ -63,17 +69,22 @@ $commonBorder: 1px solid var(--primary-color);
 
 /* Padding */
 $commonPadding: 0.5rem;
+$headerPadding: 4px, 16px, 4px, 16px;
 
 /*color*/
 $customWhiteRegHoverBgColor: #2b3d5117;
-$customWhiteHoverBgColor: #2B3D51;
+$customWhiteHoverBgColor: #2b3d51;
 
 /*color*/
 $customRegHoverBgColor: #0d4d33;
+$headerButtonBgColor: #0d4d33;
+$headerButtonTextColor: #0d4d33;
+$headerBgColor: #ededed;
+$headerColor: #ededed;
 
 /*Create button*/
-$createButtonBgColor: #16A34A;
-$createButtonHoverBgColor: #16A34A;
+$createButtonBgColor: #16a34a;
+$createButtonHoverBgColor: #16a34a;
 $createButtonTextColor: #ffffff;
 $createButtonHoverTextColor: #ffff;
 
@@ -121,12 +132,12 @@ $deleteButtonHoverTextColor: var(--delete-hover-text);
 
 /*Delete action user button*/
 $deleteButtonBgColorUser: #ffff;
-$deleteButtonHoverBgColorUser: #FFEAED;
-$deleteButtonTextColorUser: #C70A18;
-$deleteButtonHoverTextColorUser: #C70A18;
+$deleteButtonHoverBgColorUser: #ffeaed;
+$deleteButtonTextColorUser: #c70a18;
+$deleteButtonHoverTextColorUser: #c70a18;
 
 /*Delete -Ok button*/
-$delOkButtonBgColor: #D31720;
+$delOkButtonBgColor: #d31720;
 $delOkButtonHoverBgColor: #e72932;
 $delOkButtonTextColor: #fff;
 $delOkButtonHoverTextColor: #fff;
@@ -144,9 +155,9 @@ $primaryButtonBgColor: var(--primary-color);
 $primaryButtonHoverBgColor: var(--primary-hover-color);
 
 /*Status Buttons */
-$blueStatusColor:#32BEEA;
-$orangeStatusColor:#EA7432;
-$goldStatusColor:#EAC232;
-$aquaStatusColor:#2DCC9C;
-$warningStatusColor:#FF3100;
-$statusBackgroundColor:#ffffff;
+$blueStatusColor: #32beea;
+$orangeStatusColor: #ea7432;
+$goldStatusColor: #eac232;
+$aquaStatusColor: #2dcc9c;
+$warningStatusColor: #ff3100;
+$statusBackgroundColor: #ffffff;

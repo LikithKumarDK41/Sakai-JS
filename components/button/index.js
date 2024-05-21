@@ -16,14 +16,15 @@ export const Button = (props) => {
   } = buttonProps;
   let updatedIcon = icon;
   if (isForward) {
-    updatedIcon="pi pi-angle-right";
+    updatedIcon = "pi pi-angle-right";
   }
 
   return (
     <div className={`${parentClassName}`} style={parentStyle}>
       <PrimeReactButton
-        className={`${bg} ${hoverBg} ${custom || "custom-button"
-          }  ${buttonClass} font-medium border-noround`}
+        className={`${bg} ${hoverBg} ${
+          custom || "custom-button"
+        }  ${buttonClass} font-medium border-noround`}
         label={text}
         icon={isLoading ? "pi pi-spin pi-spinner" : icon || updatedIcon}
         disabled={isLoading ? isLoading : false}
@@ -41,8 +42,9 @@ export const ButtonRounded = (props) => {
   return (
     <div className={`${parentClass}`} style={parentStyle}>
       <PrimeReactButton
-        className={`${bg} ${hoverBg} ${icon && "custom-icon-button"} ${custom || "custom-button"
-          } ${buttonClass} font-medium border-round-3xl`}
+        className={`${bg} ${hoverBg} ${icon && "custom-icon-button"} ${
+          custom || "custom-button"
+        } ${buttonClass} font-medium border-round-3xl`}
         label={text}
         icon={icon}
         {...restProps}
@@ -61,37 +63,47 @@ export const StatusButton = (props) => {
     icon,
     bg,
     isLoading,
-    warning,
-    blueStatus:isBlueStatus,
-    orangeStatus:isOrangeStatus,
-    goldStatus:isGoldStatus,
-    aquaStatus:isAquaStatus,
-    warningStatus:isWarningStatus,
+    status,
     ...restProps
   } = statusButtonProps;
-  let status
-  if(isBlueStatus){
-    status="blueStatus"
-  }else if(isOrangeStatus){
-    status="orangeStatus"
-  }
-  else if(isGoldStatus){
-    status="goldStatus"
-  }
-  else if(isAquaStatus){
-    status="aquaStatus"
-  }else if(isWarningStatus){
-    status="warningStatus"
+
+  let statusClass = "";
+  let iconElement = (
+    <>
+      <BsDot />
+    </>
+  );
+
+  switch (status) {
+    case "blueStatus":
+      statusClass = "blueStatus";
+      break;
+    case "orangeStatus":
+      statusClass = "orangeStatus";
+      break;
+    case "goldStatus":
+      statusClass = "goldStatus";
+      break;
+    case "aquaStatus":
+      statusClass = "aquaStatus";
+      break;
+    case "warningStatus":
+      statusClass = "warningStatus";
+      iconElement = "pi pi-exclamation-circle";
+      break;
+    default:
+      statusClass = "";
+      iconElement = "";
   }
 
   return (
-    <div className={`${status} ${parentClassName} `} style={parentStyle}>
+    <div className={`${statusClass} ${parentClassName} `} style={parentStyle}>
       <PrimeReactButton
-        className={`${bg} ${hoverBg} ${custom || "custom-button"
-          }  ${buttonClass} font-medium border-noround`}
+        className={`${bg} ${hoverBg} ${
+          custom || "custom-button"
+        }  ${buttonClass} font-medium border-noround`}
         label={text}
-        icon={isWarningStatus ? "pi pi-exclamation-circle":<><BsDot/>
-        </>}
+        icon={iconElement}
         disabled={isLoading ? isLoading : false}
         {...restProps}
       />

@@ -1,4 +1,5 @@
 import { Button as PrimeReactButton } from "primereact/button";
+import { BsDot } from "react-icons/bs";
 
 export const Button = (props) => {
   const { parentClassName, parentStyle, buttonProps = {} } = props;
@@ -9,7 +10,6 @@ export const Button = (props) => {
     text,
     icon,
     bg,
-    rounded,
     isLoading,
     forward: isForward,
     ...restProps
@@ -25,7 +25,6 @@ export const Button = (props) => {
         className={`${bg} ${hoverBg} ${custom || "custom-button"
           }  ${buttonClass} font-medium border-noround`}
         label={text}
-        rounded={"true"}
         icon={isLoading ? "pi pi-spin pi-spinner" : icon || updatedIcon}
         disabled={isLoading ? isLoading : false}
         {...restProps}
@@ -46,6 +45,54 @@ export const ButtonRounded = (props) => {
           } ${buttonClass} font-medium border-round-3xl`}
         label={text}
         icon={icon}
+        {...restProps}
+      />
+    </div>
+  );
+};
+
+export const StatusButton = (props) => {
+  const { parentClassName, parentStyle, statusButtonProps = {} } = props;
+  const {
+    hoverBg,
+    custom,
+    buttonClass,
+    text,
+    icon,
+    bg,
+    isLoading,
+    warning,
+    blueStatus:isBlueStatus,
+    orangeStatus:isOrangeStatus,
+    goldStatus:isGoldStatus,
+    aquaStatus:isAquaStatus,
+    warningStatus:isWarningStatus,
+    ...restProps
+  } = statusButtonProps;
+  let status
+  if(isBlueStatus){
+    status="blueStatus"
+  }else if(isOrangeStatus){
+    status="orangeStatus"
+  }
+  else if(isGoldStatus){
+    status="goldStatus"
+  }
+  else if(isAquaStatus){
+    status="aquaStatus"
+  }else if(isWarningStatus){
+    status="warningStatus"
+  }
+
+  return (
+    <div className={`${status} ${parentClassName} `} style={parentStyle}>
+      <PrimeReactButton
+        className={`${bg} ${hoverBg} ${custom || "custom-button"
+          }  ${buttonClass} font-medium border-noround`}
+        label={text}
+        icon={isWarningStatus ? "pi pi-exclamation-circle":<><BsDot/>
+        </>}
+        disabled={isLoading ? isLoading : false}
         {...restProps}
       />
     </div>

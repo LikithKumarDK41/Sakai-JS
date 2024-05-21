@@ -582,3 +582,121 @@
         border-color: $exportButtonHoverBgColor;
     }
 }
+
+
+/** Status Button**/
+
+/*Blue Status*/
+.blueStatus {
+    .p-button {
+        background-color:$statusBackgroundColor;
+        color:$blueStatusColor;
+        border-color: $blueStatusColor;
+    }
+
+    .p-button-label {
+        padding-left: 5px;
+        text-align: left;
+    }
+}
+
+.blueStatus {
+    .p-button:enabled:hover,
+    .p-button:not(button):not(a):not(.p-disabled):hover {
+        background-color:$statusBackgroundColor;
+        color:$blueStatusColor;
+        border-color:$blueStatusColor;
+    }
+}
+
+/*Orange Status*/
+.orangeStatus {
+    .p-button {
+        background-color:$statusBackgroundColor;
+        color:$orangeStatusColor;
+        border-color:$orangeStatusColor;
+    }
+
+    .p-button-label {
+        padding-left: 5px;
+        text-align: left;
+    }
+}
+
+.orangeStatus {
+    .p-button:enabled:hover,
+    .p-button:not(button):not(a):not(.p-disabled):hover {
+        background-color:$statusBackgroundColor;
+        color:$orangeStatusColor;
+        border-color:$orangeStatusColor;
+    }
+}
+
+/*Gold Status*/
+.goldStatus {
+    .p-button {
+        background-color:$statusBackgroundColor;
+        color:$goldStatusColor;        
+        border-color:$goldStatusColor;
+    }
+
+    .p-button-label {
+        padding-left: 5px;
+        text-align: left;
+    }
+}
+
+.goldStatus {
+    .p-button:enabled:hover,
+    .p-button:not(button):not(a):not(.p-disabled):hover {
+        background-color:$statusBackgroundColor;
+        color:$goldStatusColor;
+        border-color:$goldStatusColor;
+    }
+}
+
+/*Aqua Status*/
+.aquaStatus {
+    .p-button {
+        background-color:$statusBackgroundColor;
+        color:$aquaStatusColor;       
+        border-color:$aquaStatusColor;
+    }
+
+    .p-button-label {
+        padding-left: 5px;
+        text-align: left;
+    }
+}
+
+.aquaStatus {
+    .p-button:enabled:hover,
+    .p-button:not(button):not(a):not(.p-disabled):hover {
+        background-color:$statusBackgroundColor;
+        color:$aquaStatusColor;
+        border-color:$aquaStatusColor;
+    }
+}
+
+/*Warning Status*/
+.warningStatus {
+    .p-button {
+        background-color:$statusBackgroundColor;
+        color:$warningStatusColor;       
+        border-color:$warningStatusColor;
+    }
+
+    .p-button-label {
+        padding-left: 5px;
+        text-align: left;
+    }
+}
+
+.warningStatus {
+    .p-button:enabled:hover,
+    .p-button:not(button):not(a):not(.p-disabled):hover {
+        background-color:$statusBackgroundColor;
+        color:$warningStatusColor;
+        border-color:$warningStatusColor;
+    }
+}

@@ -17,6 +17,7 @@ import AudioRecorder from "@/components/audio";
 import Doughnut from "@/components/chart";
 import CustomHeader from "@/components/customHeader";
 import { DateTime, Calendar, DateTimeDisplay } from "@/components/date&time";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 export {
   NormalTable,
@@ -53,5 +54,6 @@ export {
   DateTime,
   Calendar,
   DateTimeDisplay,
-  StatusButton
+  StatusButton,
+  LanguageSwitcher
 }

@@ -1,17 +1,15 @@
 import { Tooltip } from "primereact/tooltip";
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { BsFillMicFill } from "react-icons/bs";
-import {
-  getValueByKeyRecursively as translate,
-} from "@/helper";
-import { LayoutContext } from "@/layout/context/layoutcontext";
+import { useTranslation } from 'next-i18next';
 
 let tooltipIdCounter = 0; // Counter for generating unique IDs
 
 function AudioRecorder({ onAudioRecorded, onRecordingStateChange, disabled, isRecording, customClass, customStyle, customParentClassName }) {
+  const { t } = useTranslation('translation');
+
   const [recording, setRecording] = useState(false);
   const [mediaRecorder, setMediaRecorder] = useState(null);
-  const { localeJson } = useContext(LayoutContext);
   let audioChunks = [];
   const tooltipId = `mic-tooltip-${tooltipIdCounter++}`;
 
@@ -55,7 +53,7 @@ function AudioRecorder({ onAudioRecorded, onRecordingStateChange, disabled, isRe
       <i className={`w-2rem ${customParentClassName}`}>
         <div>
           {!disabled && !recording && (
-            <Tooltip target={`#${tooltipId}`} position="top" content={translate(localeJson, "mic_text")} className="shadow-none" />
+            <Tooltip target={`#${tooltipId}`} position="top" content={t('mic_text')} className="shadow-none" />
           )}
           <BsFillMicFill
             id={tooltipId}

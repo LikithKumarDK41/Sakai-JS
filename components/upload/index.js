@@ -1,9 +1,8 @@
-import React, { useRef, useState, useContext } from 'react';
-
-import { getValueByKeyRecursively as translate } from "@/helper";
-import { LayoutContext } from "@/layout/context/layoutcontext";
+import React, { useRef, useState } from 'react';
+import { useTranslation } from 'next-i18next';
 
 export const InputFile = (props) => {
+    const { t } = useTranslation('translation');
     const {
         parentClass,
         parentStyle,
@@ -27,6 +26,7 @@ export const InputFile = (props) => {
         buttonText,
         ...restProps
     } = inputFileProps;
+
     const divStyle = {
         // You can adjust the border style as needed
         padding: '10px', // Add padding for spacing
@@ -34,7 +34,6 @@ export const InputFile = (props) => {
     };
     const [selectedFileName, setSelectedFileName] = useState('');
     const fileInputRef = useRef(null);
-    const { localeJson, locale } = useContext(LayoutContext);
 
     const handleFileChange = (event) => {
         const file = event.target.files[0];
@@ -67,7 +66,7 @@ export const InputFile = (props) => {
                 type='button'
                 className={`${inputFileClass} ${custom || 'input_file'} ${height || 'custom_input'}`}
                 onClick={handleButtonClick}
-            >{buttonText || translate(localeJson, 'file_choose')}
+            >{buttonText || t('file_choose')}
             </button>
             <span className='pl-2' style={{ wordBreak: "break-word" }}>
                 {selectedFileName || placeholder}

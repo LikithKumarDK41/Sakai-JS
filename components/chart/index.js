@@ -1,13 +1,10 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Chart } from 'primereact/chart';
-
-import { LayoutContext } from "@/layout/context/layoutcontext";
-import {
-    getValueByKeyRecursively as translate
-} from "@/helper";
+import { useTranslation } from 'next-i18next';
 
 const Doughnut = ({ labels, data, bgClr, hvrClr, type }) => {
-    const { localeJson } = useContext(LayoutContext);
+    const { t } = useTranslation('translation');
+
     const chartData = {
         labels,
         datasets: [
@@ -50,7 +47,7 @@ const Doughnut = ({ labels, data, bgClr, hvrClr, type }) => {
     return (
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '440px' }}>
             {data && data.every(value => value === 0) ? (
-                <div>{translate(localeJson, "no_data_available")}</div>
+                <div>{t('no_data_available')}</div>
             ) : (
                 <Chart type={type || "doughnut"} data={chartData} options={options} style={{ minHeight: "440px" }} />
             )}

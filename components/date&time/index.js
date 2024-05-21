@@ -1,12 +1,12 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Calendar as Cal } from 'primereact/calendar';
 import { addLocale } from 'primereact/api';
+import { useTranslation } from 'next-i18next';
 
-import { LayoutContext, } from "@/layout/context/layoutcontext";
-import { getValueByKeyRecursively as translate } from "@/helper";
-import { NormalLabel } from "@/components"; 
+import { NormalLabel } from "@/components";
 
 export const DateTime = (props) => {
+    const { t } = useTranslation('translation');
     const {
         dateTimeParentClassName,
         dateTimeParentStyle,
@@ -18,18 +18,19 @@ export const DateTime = (props) => {
         floatLabelProps,
         ...restProps
     } = props && props.dateTimeProps;
+
     const [date, setDate] = useState(props.dateTimeProps.date);
-    const { localeJson } = useContext(LayoutContext);
     const calendarRef = useRef(null);
+
     addLocale('en', {
         firstDayOfWeek: 0,
-        dayNames: [translate(localeJson, 'sunday'), translate(localeJson, 'monday'), translate(localeJson, 'tuesday'), translate(localeJson, 'wednesday'), translate(localeJson, 'thursday'), translate(localeJson, 'friday'), translate(localeJson, 'saturday')],
-        dayNamesShort: [translate(localeJson, 'su'), translate(localeJson, 'mo'), translate(localeJson, 'tu'), translate(localeJson, 'we'), translate(localeJson, 'th'), translate(localeJson, 'fr'), translate(localeJson, 'sa')],
-        dayNamesMin: [translate(localeJson, 'su'), translate(localeJson, 'mo'), translate(localeJson, 'tu'), translate(localeJson, 'we'), translate(localeJson, 'th'), translate(localeJson, 'fr'), translate(localeJson, 'sa')],
-        monthNames: [translate(localeJson, 'jan'), translate(localeJson, 'feb'), translate(localeJson, 'mar'), translate(localeJson, 'apr'), translate(localeJson, 'may'), translate(localeJson, 'jun'), translate(localeJson, 'jul'), translate(localeJson, 'aug'), translate(localeJson, 'sep'), translate(localeJson, 'oct'), translate(localeJson, 'nov'), translate(localeJson, 'dec')],
-        monthNamesShort: [translate(localeJson, 'jan'), translate(localeJson, 'feb'), translate(localeJson, 'mar'), translate(localeJson, 'apr'), translate(localeJson, 'may'), translate(localeJson, 'jun'), translate(localeJson, 'jul'), translate(localeJson, 'aug'), translate(localeJson, 'sep'), translate(localeJson, 'oct'), translate(localeJson, 'nov'), translate(localeJson, 'dec')],
-        today: translate(localeJson, 'today'),
-        clear: translate(localeJson, 'clear')
+        dayNames: [t('sunday'), t('monday'), t('tuesday'), t('wednesday'), t('thursday'), t('friday'), t('saturday')],
+        dayNamesShort: [t('su'), t('mo'), t('tu'), t('we'), t('th'), t('fr'), t('sa')],
+        dayNamesMin: [t('su'), t('mo'), t('tu'), t('we'), t('th'), t('fr'), t('sa')],
+        monthNames: [t('jan'), t('feb'), t('mar'), t('apr'), t('may'), t('jun'), t('jul'), t('aug'), t('sep'), t('oct'), t('nov'), t('dec')],
+        monthNamesShort: [t('jan'), t('feb'), t('mar'), t('apr'), t('may'), t('jun'), t('jul'), t('aug'), t('sep'), t('oct'), t('nov'), t('dec')],
+        today: t('today'),
+        clear: t('clear')
     });
 
     return (
@@ -56,7 +57,7 @@ export const DateTime = (props) => {
                     }
                 }
                 }
-                dateFormat={translate(localeJson, 'dateFormat')}
+                dateFormat={t('dateFormat')}
                 panelClassName="custom-panel"
                 {...restProps}
             />
@@ -83,21 +84,19 @@ export const Calendar = (props) => {
 
     const [date, setDate] = useState(props.calendarProps.date);
 
-    const { localeJson } = useContext(LayoutContext);
-
     useEffect(() => {
         setDate(props.calendarProps.date)
     }, [props.calendarProps.date])
 
     addLocale('en', {
         firstDayOfWeek: 0,
-        dayNames: [translate(localeJson, 'sunday'), translate(localeJson, 'monday'), translate(localeJson, 'tuesday'), translate(localeJson, 'wednesday'), translate(localeJson, 'thursday'), translate(localeJson, 'friday'), translate(localeJson, 'saturday')],
-        dayNamesShort: [translate(localeJson, 'su'), translate(localeJson, 'mo'), translate(localeJson, 'tu'), translate(localeJson, 'we'), translate(localeJson, 'th'), translate(localeJson, 'fr'), translate(localeJson, 'sa')],
-        dayNamesMin: [translate(localeJson, 'su'), translate(localeJson, 'mo'), translate(localeJson, 'tu'), translate(localeJson, 'we'), translate(localeJson, 'th'), translate(localeJson, 'fr'), translate(localeJson, 'sa')],
-        monthNames: [translate(localeJson, 'jan'), translate(localeJson, 'feb'), translate(localeJson, 'mar'), translate(localeJson, 'apr'), translate(localeJson, 'may'), translate(localeJson, 'jun'), translate(localeJson, 'jul'), translate(localeJson, 'aug'), translate(localeJson, 'sep'), translate(localeJson, 'oct'), translate(localeJson, 'nov'), translate(localeJson, 'dec')],
-        monthNamesShort: [translate(localeJson, 'jan'), translate(localeJson, 'feb'), translate(localeJson, 'mar'), translate(localeJson, 'apr'), translate(localeJson, 'may'), translate(localeJson, 'jun'), translate(localeJson, 'jul'), translate(localeJson, 'aug'), translate(localeJson, 'sep'), translate(localeJson, 'oct'), translate(localeJson, 'nov'), translate(localeJson, 'dec')],
-        today: translate(localeJson, 'today'),
-        clear: translate(localeJson, 'clear')
+        dayNames: [t('sunday'), t('monday'), t('tuesday'), t('wednesday'), t('thursday'), t('friday'), t('saturday')],
+        dayNamesShort: [t('su'), t('mo'), t('tu'), t('we'), t('th'), t('fr'), t('sa')],
+        dayNamesMin: [t('su'), t('mo'), t('tu'), t('we'), t('th'), t('fr'), t('sa')],
+        monthNames: [t('jan'), t('feb'), t('mar'), t('apr'), t('may'), t('jun'), t('jul'), t('aug'), t('sep'), t('oct'), t('nov'), t('dec')],
+        monthNamesShort: [t('jan'), t('feb'), t('mar'), t('apr'), t('may'), t('jun'), t('jul'), t('aug'), t('sep'), t('oct'), t('nov'), t('dec')],
+        today: t('today'),
+        clear: t('clear')
     });
 
     return (
@@ -122,7 +121,7 @@ export const Calendar = (props) => {
                         onChange(e);
                     }
                 }}
-                dateFormat={translate(localeJson, 'dateFormat')}
+                dateFormat={t('dateFormat')}
                 panelClassName="custom-panel"
                 {...restProps}
             />
@@ -135,6 +134,7 @@ export const Calendar = (props) => {
 
 
 export const DateTimeDisplay = (props) => {
+    const { i18n } = useTranslation();
     const {
         fontsize,
         bgColor,
@@ -144,7 +144,6 @@ export const DateTimeDisplay = (props) => {
         parentStyle,
     } = props;
 
-    const { locale } = useContext(LayoutContext);
     const [currentDateTime, setCurrentDateTime] = useState(new Date());
 
     useEffect(() => {
@@ -159,23 +158,23 @@ export const DateTimeDisplay = (props) => {
 
     const options = {
         year: 'numeric',
-        month: locale=="ja"?'long':'2-digit',
-        day: locale=="ja"?'numeric':'2-digit',
+        month: i18n.language == "ja" ? 'long' : '2-digit',
+        day: i18n.language == "ja" ? 'numeric' : '2-digit',
         hour: '2-digit',
-        hour12:false,
+        hour12: false,
         minute: '2-digit',
         timeZone: 'Asia/Tokyo'
     };
-    
-    const formattedDateTime = currentDateTime.toLocaleString(locale === 'ja' ? 'ja-JP' : 'en-US',options);
+
+    const formattedDateTime = currentDateTime.toLocaleString(i18n.language === 'ja' ? 'ja-JP' : 'en-US', options);
     const displayDateTime = formattedDateTime.replace(/(\d+)\/(\d+)\/(\d+), (\d+):(\d+)/, '$3-$1-$2 $4:$5');
 
-    const formattedDateTime1 = currentDateTime.toLocaleString('ja-JP',options);
+    const formattedDateTime1 = currentDateTime.toLocaleString('ja-JP', options);
     const displayDateTime1 = formattedDateTime1.replace(/(\d+)年(\d+)月(\d+)日,/, '$1年$2月$3日 ');
 
     return (
         <div className={`${fontsize} ${bgColor} ${fontWeight} ${parentClass}`} id={id} style={parentStyle}>
-            { locale=="ja" ? displayDateTime1 : displayDateTime}
+            {i18n.language == "ja" ? displayDateTime1 : displayDateTime}
         </div>
     );
 };

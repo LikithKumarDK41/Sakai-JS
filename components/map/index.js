@@ -7,9 +7,9 @@ import {
     OverlayView,
     OverlayViewF,
 } from "@react-google-maps/api";
+import { useTranslation } from 'next-i18next';
 
 import { LayoutContext } from "@/layout/context/layoutcontext";
-import { getValueByKeyRecursively as translate } from "@/helper";
 
 export const GoogleMapComponent = ({
     initialPosition,
@@ -18,13 +18,15 @@ export const GoogleMapComponent = ({
     popoverContent,
     mapScale,
 }) => {
+    const { setLoader } = useContext(LayoutContext);
+    const { i18n } = useTranslation();
+    const GOOGLE_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_API_KEY;
+
     const containerStyle = {
         width: "100%",
         height: height || "100vh",
     };
-    const GOOGLE_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_API_KEY;
     const [center, setCenter] = useState(initialPosition);
-    const { locale, setLoader } = useContext(LayoutContext);
     const [selectedMarker, setSelectedMarker] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
 
@@ -45,7 +47,7 @@ export const GoogleMapComponent = ({
     useEffect(() => {
         setLoader(true);
         const googleMapScript = document.createElement("script");
-        googleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_API_KEY}&libraries=places&language=${locale}`;
+        googleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_API_KEY}&libraries=places&language=${i18n.language}`;
         googleMapScript.onload = () => setIsLoaded(true);
         document.head.appendChild(googleMapScript);
         setLoader(false);
@@ -53,7 +55,7 @@ export const GoogleMapComponent = ({
             // Cleanup script on component unmount
             document.head.removeChild(googleMapScript);
         };
-    }, [locale]);
+    }, []);
 
     const onMarkerClick = (marker) => {
         setSelectedMarker(marker);
@@ -121,14 +123,16 @@ export const GoogleMapMultiMarkerComponent = ({
     searchResult,
     mapScale,
 }) => {
+    const { i18n } = useTranslation();
+    const { t } = useTranslation('translation');
     const GOOGLE_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_API_KEY;
+
     const [center, setCenter] = useState(initialPosition);
-    const { locale, localeJson, setLoader, loader } = useContext(LayoutContext);
     const [windowHeight, setWindowHeight] = useState(height);
     const { isLoaded } = useJsApiLoader({
         id: "google-map-script",
         googleMapsApiKey: GOOGLE_API_KEY,
-        language: locale,
+        language: i18n.language,
     });
     const [selectedMarker, setSelectedMarker] = useState(null);
     const [isMarker, setIsMarker] = useState(false);
@@ -192,35 +196,22 @@ export const GoogleMapMultiMarkerComponent = ({
             <div class="legend_view_box" style='position:absolute;left:-195px;top:70px'>
               <div class="legend_main_view">
                 <img class="legend_first_view" src=${GreenIcon.url} />
-                <div class="legend_second_view">${translate(
-                        localeJson,
-                        "empty"
-                    )}</div>
+                <div class="legend_second_view">${t("empty")}</div>
               </div>
               <div class="legend_main_view">
                 <img class="legend_first_view" src=${RedIcon.url} />
-                <div class="legend_second_view">${translate(
-                        localeJson,
-                        "beginningToCrowd"
-                    )}</div>
+                <div class="legend_second_view">${t("beginningToCrowd")}</div>
               </div>
               <div class="legend_main_view">
                 <img class="legend_first_view" src=${BlueIcon.url} />
-                <div class="legend_second_view">${translate(
-                        localeJson,
-                        "crowded"
-                    )}</div>
+                <div class="legend_second_view">${t("crowded")}</div>
               </div>
               <div class="legend_main_view">
                 <img class="legend_first_view"src=${GrayIcon.url} />
-                <div class="legend_second_view">${translate(
-                        localeJson,
-                        "closed"
-                    )}</div>
+                <div class="legend_second_view">${t("closed")}</div>
               </div>
             </div>
           `;
-
                     map.controls[window.google.maps.ControlPosition.TOP_LEFT].push(
                         customControlDiv
                     );
@@ -373,14 +364,14 @@ export const GoogleMapMultiMarkerComponent = ({
                                                     >
                                                         {selectedMarker.active_flg == 1
                                                             ? selectedMarker.center == 100
-                                                                ? translate(localeJson, "crowded")
+                                                                ? t("crowded")
                                                                 : selectedMarker.center > 50 &&
                                                                     selectedMarker.center <= 80
-                                                                    ? translate(localeJson, "beginningToCrowd")
+                                                                    ? t("beginningToCrowd")
                                                                     : selectedMarker.center >= 0
-                                                                        ? translate(localeJson, "empty")
-                                                                        : translate(localeJson, "closed")
-                                                            : translate(localeJson, "closed")}
+                                                                        ? t("empty")
+                                                                        : t("closed")
+                                                            : t("closed")}
                                                     </h1>
                                                     <div
                                                         id="bodyContent text-base"
@@ -393,14 +384,14 @@ export const GoogleMapMultiMarkerComponent = ({
                                                             {selectedMarker.address_place}
                                                         </div>
                                                         <div className="text-base mb-1">
-                                                            {translate(localeJson, "altitude") +
+                                                            {t("altitude") +
                                                                 ": " +
                                                                 selectedMarker.altitude}
                                                         </div>
                                                     </div>
                                                 </div>
                                             ) : (
-                                                <div>{translate(localeJson, "close")}</div>
+                                                <div>{t("close")}</div>
                                             )}
                                         </div>
                                     </InfoWindow>

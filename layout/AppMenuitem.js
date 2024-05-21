@@ -6,14 +6,15 @@ import { Ripple } from 'primereact/ripple';
 import { classNames } from 'primereact/utils';
 import { CSSTransition } from 'react-transition-group';
 import { Tooltip } from 'primereact/tooltip';
+import { useTranslation } from 'next-i18next';
 
 import { MenuContext } from '@/layout/context/menucontext';
-import { getValueByKeyRecursively as translate } from '@/helper';
 import { LayoutContext } from '@/layout/context/layoutcontext';
 
 const AppMenuitem = (props) => {
-    const { layoutConfig, layoutState, localeJson, locale } = useContext(LayoutContext);
+    const { layoutConfig, layoutState } = useContext(LayoutContext);
     const router = useRouter();
+    const { t } = useTranslation('translation');
 
     const { activeMenu, setActiveMenu } = useContext(MenuContext);
     const item = props.item;
@@ -37,7 +38,7 @@ const AppMenuitem = (props) => {
         return () => {
             Router.events.off('routeChangeComplete', onRouteChange);
         };
-    }, [locale]);
+    }, []);
 
     const itemClick = (event) => {
         // Avoid processing disabled items
@@ -92,7 +93,7 @@ const AppMenuitem = (props) => {
                 )}
 
                 {!item.top && item.to && !item.items && item.visible !== false ? (
-                    <Link ref={menuRef} data-pr-tooltip={item.label} href={item.to} replace={item.replaceUrl} target={item.target} onClick={(e) => itemClick(e)} className={classNames(item.class, 'p-ripple', { 'active-route': isActiveRoute && item.label != translate(localeJson, 'staff_dashboard') }, { 'active-parent-menu': item.label == translate(localeJson, 'staff_dashboard') })} tabIndex={0}>
+                    <Link ref={menuRef} data-pr-tooltip={item.label} href={item.to} replace={item.replaceUrl} target={item.target} onClick={(e) => itemClick(e)} className={classNames(item.class, 'p-ripple', { 'active-route': isActiveRoute && item.label != t('staff_dashboard') }, { 'active-parent-menu': item.label == t('staff_dashboard') })} tabIndex={0}>
                         <span className="layout-menuitem-text">{item.label}</span>
                         {item.items && <i className="pi pi-fw pi-angle-down layout-submenu-toggler"></i>}
                         <Ripple />

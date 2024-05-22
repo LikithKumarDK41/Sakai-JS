@@ -32,6 +32,7 @@ import { DateTime, Calendar, DateTimeDisplay } from "@/components/date&time";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { ContentHeader , CustomHeader } from "@/components/header";
 import { Steps } from "@/components/steps";
+import { StepsCard } from "@/components/card";
 
 export {
   NormalTable,
@@ -72,5 +73,6 @@ export {
   LanguageSwitcher,
   ContentHeader,
   SelectButton,
-  Steps
+  Steps,
+  StepsCard
 };

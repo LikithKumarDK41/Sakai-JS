@@ -1,7 +1,7 @@
 "use client";
 
 import React, { act, useState } from "react";
-import { Button, CustomHeader, SelectButton, StatusButton, Steps } from "@/components";
+import { Button, CustomHeader, SelectButton, StatusButton, Steps, StepsCard } from "@/components";
 
 const DemoPage = () => {
   const options = ['Off', 'On'];
@@ -172,6 +172,21 @@ const DemoPage = () => {
                 </button>
             )}
           </div>
+        </div>
+        <div className="mt-2">
+            <StepsCard stepsCardProps={{
+              topHeaderProps:{
+                text:"Sandeep"
+              },
+              content:<p>Hi <br/> sandeep</p>,
+              stepCardStyle:{background: '#FDEEEA'},
+              stepCardClassName:"w-5",
+              imageProps:{
+                src:"/layout/images/handshake.png",
+                width:"100",
+                height:"80",
+              }
+            }} parentClassName="flex justify-content-center"/>
         </div>
       </div>
     </>

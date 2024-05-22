@@ -1,5 +1,6 @@
 import { Button as PrimeReactButton } from "primereact/button";
 import { BsDot } from "react-icons/bs";
+import { SelectButton as SelButton} from 'primereact/selectbutton';
 
 export const Button = (props) => {
   const { parentClassName, parentStyle, buttonProps = {} } = props;
@@ -16,7 +17,7 @@ export const Button = (props) => {
   } = buttonProps;
   let updatedIcon = icon;
   if (isForward) {
-    updatedIcon="pi pi-angle-right";
+    updatedIcon = "pi pi-angle-right";
   }
 
   return (
@@ -61,40 +62,66 @@ export const StatusButton = (props) => {
     icon,
     bg,
     isLoading,
-    warning,
-    blueStatus:isBlueStatus,
-    orangeStatus:isOrangeStatus,
-    goldStatus:isGoldStatus,
-    aquaStatus:isAquaStatus,
-    warningStatus:isWarningStatus,
+    status,
     ...restProps
   } = statusButtonProps;
-  let status
-  if(isBlueStatus){
-    status="blueStatus"
-  }else if(isOrangeStatus){
-    status="orangeStatus"
-  }
-  else if(isGoldStatus){
-    status="goldStatus"
-  }
-  else if(isAquaStatus){
-    status="aquaStatus"
-  }else if(isWarningStatus){
-    status="warningStatus"
+
+  let statusClass = "";
+  let iconElement = (
+    <>
+      <BsDot />
+    </>
+  );
+
+  switch (status) {
+    case "blueStatus":
+      statusClass = "blueStatus";
+      break;
+    case "orangeStatus":
+      statusClass = "orangeStatus";
+      break;
+    case "goldStatus":
+      statusClass = "goldStatus";
+      break;
+    case "aquaStatus":
+      statusClass = "aquaStatus";
+      break;
+    case "warningStatus":
+      statusClass = "warningStatus";
+      iconElement = "pi pi-exclamation-circle";
+      break;
+    default:
+      statusClass = "";
+      iconElement = "";
   }
 
   return (
-    <div className={`${status} ${parentClassName} `} style={parentStyle}>
+    <div className={`${statusClass} ${parentClassName} `} style={parentStyle}>
       <PrimeReactButton
         className={`${bg} ${hoverBg} ${custom || "custom-button"
           }  ${buttonClass} font-medium border-noround`}
         label={text}
-        icon={isWarningStatus ? "pi pi-exclamation-circle":<><BsDot/>
-        </>}
+        icon={iconElement}
         disabled={isLoading ? isLoading : false}
         {...restProps}
       />
     </div>
   );
 };
+
+export const SelectButton = (props) => {
+  const{parentClassName ,parentStyle, selectButtonProps={}}=props;
+  const{
+    selectButtonClassName,
+    value,
+    onChange,
+    options,
+    ...restProps
+  }=selectButtonProps;
+
+  return (
+    <div className={`defaultSelectButton ${parentClassName}`} style={parentStyle}>
+      <SelButton className={` ${selectButtonClassName}`}  value={value} onChange={onChange} options={options} {...restProps}/>
+    </div>
+  )
+}

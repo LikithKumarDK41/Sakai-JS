@@ -1,7 +1,7 @@
 .layout-footer {
     width: 100%;
     transition: margin-left $transitionDuration;
-    display: flex;
+    display: none;
     flex-direction: row;
     gap: 0.5rem;
     font-size: $footerFontSize;

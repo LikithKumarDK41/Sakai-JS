@@ -3,7 +3,7 @@
 import React from 'react';
 import { Card } from 'primereact/card';
 import Image from 'next/image';
-import { FaAngleRight } from 'react-icons/fa';
+import { AiOutlineRight } from 'react-icons/ai';
 
 const Dashboard = () => {
   const sidebar = [
@@ -68,7 +68,7 @@ const Dashboard = () => {
                 className={`sampleDiv ${i === sidebar.length - 1 ? "last" : ''}`}
               >
                 <span className="text">{v.text}</span>
-                <FaAngleRight className="icon" />
+                <AiOutlineRight className="icon" />
               </div>
             ))}
           </div>

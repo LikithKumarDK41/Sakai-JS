@@ -18,6 +18,7 @@ export const Input = (props) => {
     labelProps,
     inputLeftIconProps,
     inputClassName,
+    hasError,
     inputRightIconProps,
     labelDownProps,
     isLoading,
@@ -109,7 +110,7 @@ export const Input = (props) => {
             )}
           </>
         )}
-        <InputText className={`${inputClassName}`} {...restProps} />
+        <InputText className={`${inputClassName} ${hasError ? 'p-invalid bg-red-100' : ''}`} {...restProps} />
         {inputRightIconProps?.display && (
           <>
             {inputRightIconProps?.audio?.display ? (
@@ -166,6 +167,7 @@ export const TextArea = (props) => {
     textAreaParentStyle,
     labelProps,
     textAreaClass,
+    hasError,
     float,
     floatLabelProps,
     ...restProps
@@ -189,7 +191,7 @@ export const TextArea = (props) => {
         </div>
       )}
       <InputTextarea
-        className={`custom-textArea ${textAreaClass}`}
+        className={`custom-textArea ${textAreaClass} ${hasError ? 'p-invalid bg-red-100' : ''}`}
         {...restProps}
       />
       {floatLabelProps?.text && (
@@ -215,6 +217,7 @@ export const InputNumber = (props) => {
     labelProps,
     inputLeftIconProps,
     inputNumberClassName,
+    hasError,
     inputRightIconProps,
     labelDownProps,
     isLoading,
@@ -305,7 +308,7 @@ export const InputNumber = (props) => {
           </>
         )}
         <InputNum
-          className={`custom_input ${inputNumberClassName}`}
+          className={`custom_input ${inputNumberClassName} ${hasError ? 'p-invalid bg-red-100' : ''}`}
           {...restProps}
         />
         {inputRightIconProps?.display && (
@@ -358,6 +361,7 @@ export const Password=(props)=> {
     passwordParentStyle,
     labelProps,
     passwordClassName,
+    hasError,
     float,
     floatLabelProps,
     ...restProps
@@ -380,7 +384,7 @@ export const Password=(props)=> {
         </div>
       )}
       <Pwd
-        className={passwordClassName}
+        className={`${passwordClassName} ${hasError ? 'p-invalid bg-red-100' : ''}`}
         toggleMask
         feedback={false}
         {...restProps}
@@ -406,6 +410,7 @@ export const InputGroup = (props) => {
     inputGroupParentStyle,
     labelProps,
     inputGroupClassName,
+    hasError,
     leftIcon,
     rightIcon,
     float,
@@ -440,7 +445,7 @@ export const InputGroup = (props) => {
           </span>
         )}
         <InputText
-          className={`custom_input ${inputGroupClassName}`}
+          className={`custom_input ${inputGroupClassName} ${hasError ? 'p-invalid bg-red-100' : ''}`}
           {...restProps}
         />
         {floatLabelProps?.text && (

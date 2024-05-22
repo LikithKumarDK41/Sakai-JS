@@ -33,6 +33,7 @@ import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { ContentHeader , CustomHeader } from "@/components/header";
 import { Steps } from "@/components/steps";
 import { StepsCard } from "@/components/card";
+import { Panel } from "@/components/panel";
 
 export {
   NormalTable,
@@ -74,5 +75,6 @@ export {
   ContentHeader,
   SelectButton,
   Steps,
-  StepsCard
+  StepsCard,
+  Panel
 };

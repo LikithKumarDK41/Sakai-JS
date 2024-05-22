@@ -1,24 +1,23 @@
 "use client";
 
-import { ContentHeader } from "@/components";
-import React from "react";
+import { ContentHeader, CustomHeader } from "@/components";
+import React, { useState } from "react";
 
 const Demo = () => {
   return (
     <>
       <div className="m-2">
-        <ContentHeader  contentHeaderProps={{
-            headerText:"注文番号",
-            contentText:"100105",
-            buttonText:"ピッキング",
-            buttonSymbol,
-            status:"warningStatus"
-        }} 
+        {/* <CustomHeader header="Content Header" /> */}
+        <ContentHeader
+          headerText={"注文番号"}
+          contentText={"1000105"}
+          buttonText={"ピッキング"}
+          buttonSymbol
+          status="warningStatus"
           parentClassName="header_class"
         />
       </div>
     </>
   );
 };
-
 export default Demo;

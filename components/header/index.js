@@ -12,44 +12,43 @@ export const CustomHeader = ({ header,headerClass,customParentClassName, require
     );
 };
 
-export const ContentHeader = (props) => {
-  const { parentClassName, parentStyle, contentHeaderProps = {} } = props;
-  const {
+export const ContentHeader = ({
     headerText,
     contentText,
     buttonText,
     buttonSymbol,
-    contentHeaderColor,
+    parentClassName,
+    customHeaderColor,
     status,
     customContentHeaderStatusButton,
-  } = contentHeaderProps;
-
-  return (
-    <div className={`${parentClassName}`} style={`${parentStyle}`}>
-      <div className="flex justify-between">
-        <div className="">
-          <span className={`${contentHeaderColor || "headerColor"}`}>
-            {headerText} :{" "}
-          </span>
-          <span>{contentText}</span>
-        </div>
-        <div>
-          {buttonSymbol && (
-            <span className="">
-              <StatusButton
-                parentClassName="header-button"
-                statusButtonProps={{
-                  text: buttonText,
-                  status: status,
-                  custom: `${customContentHeaderStatusButton ||
-                    "defaultContentHeaderStatusButton"
-                    }`,
-                }}
-              />
+  }) => {
+    return (
+      <div className={`${parentClassName}`}>
+        <div className="flex justify-between">
+          <div className="">
+            <span className={`${customHeaderColor || "headerColor"}`}>
+              {headerText} :{" "}
             </span>
-          )}
+            <span>{contentText}</span>
+          </div>
+          <div>
+            {buttonSymbol && (
+              <span className="">
+                <StatusButton
+                  parentClassName="header-button"
+                  statusButtonProps={{
+                    text: buttonText,
+                    status: status,
+                    custom: `${
+                      customContentHeaderStatusButton ||
+                      "defaultContentHeaderStatusButton"
+                    }`,
+                  }}
+                />
+              </span>
+            )}
+          </div>
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  };

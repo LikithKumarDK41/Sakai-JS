@@ -14,6 +14,7 @@ import { Button, ButtonRounded, StatusButton } from "@/components/button";
 import { RadioBtn } from "@/components/radioButton";
 import { InputFile } from "@/components/upload";
 import { CardSpinner } from "@/components/spinner";
+
 import {
   Input,
   TextArea,
@@ -32,6 +33,7 @@ import CustomHeader from "@/components/customHeader";
 import { DateTime, Calendar, DateTimeDisplay } from "@/components/date&time";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import ContentHeader from "@/components/contentHeader";
+import CustomCard from "@/components/customCard";
 
 export {
   NormalTable,
@@ -71,4 +73,5 @@ export {
   StatusButton,
   LanguageSwitcher,
   ContentHeader,
+  CustomCard,
 };

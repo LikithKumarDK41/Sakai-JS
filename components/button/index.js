@@ -22,7 +22,7 @@ export const Button = (props) => {
   return (
     <div className={`${parentClassName}`} style={parentStyle}>
       <PrimeReactButton
-        className={`${bg} ${hoverBg} ${
+        className={`${bg || ""} ${hoverBg || ""} ${
           custom || "custom-button"
         }  ${buttonClass} font-medium border-noround`}
         label={text}

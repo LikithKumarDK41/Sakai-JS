@@ -14,13 +14,14 @@ $userDashBoardHeight-c: 350px;
 $userDashboardHeightSm-c: 280px;
 $headerLineHeight: 24px;
 $headerHeight: 34px;
+$cardHeight: 128px;
 
 /* width */
 $sNoWidth: 60px;
 $actionEditDeleteWidth: 200px;
 $userDashBoardWidth: 500px;
 $fullWidth: 100%;
-$headerButtonWidth: 88px;
+
 $headerLetterSpacing: 0.04em;
 
 /* Transition duration */
@@ -47,6 +48,13 @@ $commonFloatLabelFontSize: 14px;
 $detailsHeaderFontSize: 18px;
 $detailsBodyFontSize: 16px;
 $headerFontSize: 16px;
+$cardFontSize: 12px;
+
+/*Font Styles for Card*/
+$cardFontStyle: Noto Sans JP;
+$cardLineHeight: 18px;
+$cardLetterSpacing: 0.04em;
+$headerFontStyle: Noto Sans JP;
 
 /* Fonts weights */
 $commonFontWeight: 500;
@@ -59,6 +67,7 @@ $pageHeadersFontWeight: 700;
 $authHeaderFontWeight: 700;
 $detailsHeaderFontWeight: 700;
 $headerFontWeight: 500;
+$cardFontWeight: 350;
 
 /* Radius */
 $commonRadius: 5px;
@@ -77,8 +86,7 @@ $customWhiteHoverBgColor: #2b3d51;
 
 /*color*/
 $customRegHoverBgColor: #0d4d33;
-$headerButtonBgColor: #0d4d33;
-$headerButtonTextColor: #0d4d33;
+
 $headerBgColor: #ededed;
 $headerColor: #ededed;
 

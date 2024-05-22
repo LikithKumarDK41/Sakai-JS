@@ -14,8 +14,8 @@ const ContentHeader = ({
   return (
     <div className={`${parentClassName}`}>
       <div className="flex justify-between">
-        <div className="">
-          <span className={`${customHeaderColor || "headerColor"}`}>
+        <div className="header-headerText">
+          <span className={`${customHeaderColor || "headerColor"} `}>
             {headerText} :{" "}
           </span>
           <span>{contentText}</span>

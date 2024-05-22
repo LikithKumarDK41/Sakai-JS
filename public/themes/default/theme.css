@@ -1827,8 +1827,8 @@
 }
 
 .p-selectbutton .p-button.p-highlight {
-  background: #6366F1;
-  border-color: #6366F1;
+  background:var(--primary-color);
+  border-color:var(--primary-color);
   color: #ffffff;
 }
 
@@ -1838,8 +1838,8 @@
 }
 
 .p-selectbutton .p-button.p-highlight:hover {
-  background: #4F46E5;
-  border-color: #4F46E5;
+  background: var(--primary-hover-color);
+  border-color: var(--primary-hover-color);
   color: #ffffff;
 }
 
@@ -6829,7 +6829,6 @@
   background: transparent;
   transition: box-shadow 0.2s;
   border-radius: 6px;
-  background: #ffffff;
 }
 
 .p-steps .p-steps-item .p-menuitem-link .p-steps-number {

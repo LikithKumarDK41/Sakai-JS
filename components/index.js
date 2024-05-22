@@ -10,7 +10,7 @@ import {
   GoogleMapComponent,
   GoogleMapMultiMarkerComponent,
 } from "@/components/map";
-import { Button, ButtonRounded, StatusButton } from "@/components/button";
+import { Button, ButtonRounded, StatusButton, SelectButton } from "@/components/button";
 import { RadioBtn } from "@/components/radioButton";
 import { InputFile } from "@/components/upload";
 import { CardSpinner } from "@/components/spinner";
@@ -28,10 +28,10 @@ import {
 import { NotFound } from "@/components/dataNotFound";
 import AudioRecorder from "@/components/audio";
 import Doughnut from "@/components/chart";
-import CustomHeader from "@/components/customHeader";
 import { DateTime, Calendar, DateTimeDisplay } from "@/components/date&time";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
-import ContentHeader from "@/components/contentHeader";
+import { ContentHeader , CustomHeader } from "@/components/header";
+import { Steps } from "@/components/steps";
 
 export {
   NormalTable,
@@ -71,4 +71,6 @@ export {
   StatusButton,
   LanguageSwitcher,
   ContentHeader,
+  SelectButton,
+  Steps
 };

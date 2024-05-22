@@ -1,5 +1,6 @@
 import { Button as PrimeReactButton } from "primereact/button";
 import { BsDot } from "react-icons/bs";
+import { SelectButton as SelButton} from 'primereact/selectbutton';
 
 export const Button = (props) => {
   const { parentClassName, parentStyle, buttonProps = {} } = props;
@@ -22,9 +23,8 @@ export const Button = (props) => {
   return (
     <div className={`${parentClassName}`} style={parentStyle}>
       <PrimeReactButton
-        className={`${bg} ${hoverBg} ${
-          custom || "custom-button"
-        }  ${buttonClass} font-medium border-noround`}
+        className={`${bg} ${hoverBg} ${custom || "custom-button"
+          }  ${buttonClass} font-medium border-noround`}
         label={text}
         icon={isLoading ? "pi pi-spin pi-spinner" : icon || updatedIcon}
         disabled={isLoading ? isLoading : false}
@@ -42,9 +42,8 @@ export const ButtonRounded = (props) => {
   return (
     <div className={`${parentClass}`} style={parentStyle}>
       <PrimeReactButton
-        className={`${bg} ${hoverBg} ${icon && "custom-icon-button"} ${
-          custom || "custom-button"
-        } ${buttonClass} font-medium border-round-3xl`}
+        className={`${bg} ${hoverBg} ${icon && "custom-icon-button"} ${custom || "custom-button"
+          } ${buttonClass} font-medium border-round-3xl`}
         label={text}
         icon={icon}
         {...restProps}
@@ -99,9 +98,8 @@ export const StatusButton = (props) => {
   return (
     <div className={`${statusClass} ${parentClassName} `} style={parentStyle}>
       <PrimeReactButton
-        className={`${bg} ${hoverBg} ${
-          custom || "custom-button"
-        }  ${buttonClass} font-medium border-noround`}
+        className={`${bg} ${hoverBg} ${custom || "custom-button"
+          }  ${buttonClass} font-medium border-noround`}
         label={text}
         icon={iconElement}
         disabled={isLoading ? isLoading : false}
@@ -110,3 +108,20 @@ export const StatusButton = (props) => {
     </div>
   );
 };
+
+export const SelectButton = (props) => {
+  const{parentClassName ,parentStyle, selectButtonProps={}}=props;
+  const{
+    selectButtonClassName,
+    value,
+    onChange,
+    options,
+    ...restProps
+  }=selectButtonProps;
+
+  return (
+    <div className={`defaultSelectButton ${parentClassName}`} style={parentStyle}>
+      <SelButton className={` ${selectButtonClassName}`}  value={value} onChange={onChange} options={options} {...restProps}/>
+    </div>
+  )
+}

@@ -1,6 +1,6 @@
 "use client";
 import { ContentHeader, CustomHeader } from "@/components";
-import CustomCard from "@/components/customCard";
+import CustomCard from "@/components/cardContent";
 import React, { useState } from "react";
 const Demo = () => {
   const contentData = [

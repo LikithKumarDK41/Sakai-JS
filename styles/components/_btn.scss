@@ -701,3 +701,24 @@
     border-color: $warningStatusColor;
   }
 }
+
+.defaultSelectButton {
+  .p-selectbutton {
+    .p-button {
+      height: $commonHeight;
+      background: #ffffff;
+      border: 1px solid #ced4da;
+      color: #495057;
+
+      &.p-highlight {
+        background: var(--primary-color);
+        border-color: var(--primary-color);
+      }
+
+      &:hover {
+        background: var(--primary-color);
+        border-color: var(--primary-color);
+      }
+    }
+  }
+}

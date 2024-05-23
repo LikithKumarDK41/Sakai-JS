@@ -3,7 +3,7 @@
         &.layout-overlay {
             .layout-main-container {
                 margin-left: 0;
-                padding-left: .5rem;
+                padding-left: 0rem;
                 padding-bottom: 0;
             }
 
@@ -30,7 +30,7 @@
 
         &.layout-static {
             .layout-main-container {
-                margin-left: 250px;
+                margin-left: 0px;
             }
 
             &.layout-static-inactive {
@@ -48,7 +48,7 @@
                 .layout-main-container {
                     margin-left: 0;
                     margin-left: 0px;
-                    padding-left: .5rem;
+                    padding-left: 0rem;
                 }
 
                 .layout-menu {
@@ -100,35 +100,37 @@
                 }
 
                 .layout-topbar {
-                    .logo-details {
-                        display: none;
+                    display: none;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 10px 20px;
+                    background-color: #EA5532;
+
+                    .left-icons {
+                        display: flex;
+                        align-items: center;
                     }
 
-                    .header-details {
-                        width: 100%;
-                        padding: 0rem;
+                    .hamburger-icon,
+                    .cart-icon,
+                    .profile-icon {
+                        font-size: 24px;
+                        color: white;
+                    }
 
-                        .hamburger {
-                            height: 100%;
-                            width: 60px;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            padding-right: 0.2rem;
-                        }
+                    .hamburger-icon,
+                    .cart-icon {
+                        margin-right: 10px;
+                    }
 
-                        .header-details-first-view {
-                            width: calc(100% - 60px);
-                            padding-left: .5rem;
+                    .right-icons {
+                        display: flex;
+                        align-items: center;
+                    }
 
-                            .header-details-first {
-                                width: 50%;
-                            }
-
-                            .header-details-second {
-                                width: 50%;
-                            }
-                        }
+                    .logo-container img {
+                        max-width: 100%;
+                        height: auto;
                     }
                 }
             }
@@ -158,7 +160,7 @@
     .layout-wrapper {
         .layout-main-container {
             margin-left: 0;
-            padding-left: .5rem;
+            padding-left: 0rem;
         }
 
         .layout-sidebar {
@@ -198,18 +200,37 @@
         }
 
         .layout-topbar {
-            .logo-details {
-                display: none;
+            display: none;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #EA5532;
+
+            .left-icons {
+                display: flex;
+                align-items: center;
             }
 
-            .header-details {
-                width: 100%;
+            .hamburger-icon,
+            .cart-icon,
+            .profile-icon {
+                font-size: 24px;
+                color: white;
+            }
 
-                .header-details-first-view {
-                    width: 100%;
-                    white-space: noWrap;
+            .hamburger-icon,
+            .cart-icon {
+                margin-right: 10px;
+            }
 
-                }
+            .right-icons {
+                display: flex;
+                align-items: center;
+            }
+
+            .logo-container img {
+                max-width: 100%;
+                height: auto;
             }
         }
     }
@@ -223,7 +244,7 @@
     .layout-wrapper {
         .layout-main-container {
             margin-left: 0;
-            padding-left: .5rem;
+            padding-left: 0rem;
         }
 
         .layout-sidebar {
@@ -263,39 +284,37 @@
         }
 
         .layout-topbar {
-            .logo-details {
-                display: none;
+            display: none;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #EA5532;
+
+            .left-icons {
+                display: flex;
+                align-items: center;
             }
 
-            .header-details {
-                width: 100%;
+            .hamburger-icon,
+            .cart-icon,
+            .profile-icon {
+                font-size: 24px;
+                color: white;
+            }
 
-                .header-details-first-view {
-                    width: 100%;
-                    margin-left: auto;
+            .hamburger-icon,
+            .cart-icon {
+                margin-right: 10px;
+            }
 
-                    .header-details-first {
-                        white-space: noWrap;
-                    }
+            .right-icons {
+                display: flex;
+                align-items: center;
+            }
 
-                    .header-details-second {
-
-                        .header-details-second-date-time-picker {
-                            display: none;
-                        }
-
-                        .header-details-second-date-time-picker-icon {
-                            display: block;
-
-                            i {
-                                color: white;
-                                font-size: 1.5rem;
-                                font-weight: 500;
-                                margin-top: .2rem;
-                            }
-                        }
-                    }
-                }
+            .logo-container img {
+                max-width: 100%;
+                height: auto;
             }
         }
     }
@@ -309,7 +328,7 @@
     .layout-wrapper {
         .layout-main-container {
             margin-left: 0;
-            padding-left: .5rem;
+            padding-top: 4rem;
         }
 
         .layout-sidebar {
@@ -319,6 +338,7 @@
             height: 100vh;
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
+            display: flex;
         }
 
         .layout_sidebar_scroll {
@@ -349,41 +369,37 @@
         }
 
         .layout-topbar {
-            .logo-details {
-                display: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #EA5532;
+
+            .left-icons {
+                display: flex;
+                align-items: center;
             }
 
-            .header-details {
-                width: 100%;
+            .hamburger-icon,
+            .cart-icon,
+            .profile-icon {
+                font-size: 24px;
+                color: white;
+            }
 
-                .header-details-first-view {
-                    width: 100%;
-                    padding-right: 3rem;
+            .hamburger-icon,
+            .cart-icon {
+                margin-right: 10px;
+            }
 
-                    .header-details-first {
-                        width: 100%;
-                        white-space: noWrap;
-                    }
+            .right-icons {
+                display: flex;
+                align-items: center;
+            }
 
-                    .header-details-second {
-                        width: 50%;
-
-                        .header-details-second-date-time-picker {
-                            display: none;
-                        }
-
-                        .header-details-second-date-time-picker-icon {
-                            display: block;
-
-                            i {
-                                color: white;
-                                font-size: 1.5rem;
-                                font-weight: 500;
-                                margin-top: .2rem;
-                            }
-                        }
-                    }
-                }
+            .logo-container img {
+                max-width: 100%;
+                height: auto;
             }
         }
     }

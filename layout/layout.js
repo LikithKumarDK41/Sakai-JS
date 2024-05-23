@@ -114,7 +114,7 @@ const Layout = (props) => {
                 <AppTopbar ref={topbarRef} />
                 <div className="layout-sidebar">
                     <div ref={sidebarRef} className='layout_sidebar_scroll'>
-                        <AppSidebar />
+                        <AppSidebar ref={topbarRef}/>
                     </div>
                 </div>
                 <div className="layout-main-container">

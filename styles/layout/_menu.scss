@@ -4,16 +4,16 @@
     height: 100%;
     z-index: 999;
     user-select: none;
-    top: 4rem;
     transition: transform $transitionDuration, left $transitionDuration;
-    background: #E6E6E6;
+    background: white;
+    display: none;
 }
 
 .layout_sidebar_scroll {
     height: calc(100vh - 4rem);
     overflow-y: auto;
-    /* For Firefox */
     scrollbar-width: thin;
+    width: 100%;
 }
 
 .layout-menu {
@@ -254,4 +254,59 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+}
+
+.custom-layout-top-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    background-color: #F7F7F7;
+
+    .text {
+        font-size: 1em;
+        color: #333;
+        font-weight: bold;
+    }
+
+    .icon {
+        font-size: 1.5em;
+        color: #333;
+    }
+
+    .combined-view {
+        display: flex;
+        align-items: center;
+        gap: 1;
+    }
+}
+
+.custom-layout-menu {
+    margin-top: 2rem;
+    padding: 0px 15px;
+
+    .menu-item {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #ddd;
+        padding: 10px 0px;
+
+        &.last {
+            border-bottom: none;
+        }
+
+        .text {
+            font-size: 1em;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .icon {
+            font-size: 1em;
+            color: #333;
+        }
+    }
 }

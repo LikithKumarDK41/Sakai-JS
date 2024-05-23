@@ -1,5 +1,6 @@
 import { Button as PrimeReactButton } from "primereact/button";
 import { BsDot } from "react-icons/bs";
+import { SelectButton as SelButton } from "primereact/selectbutton";
 
 export const Button = (props) => {
   const { parentClassName, parentStyle, buttonProps = {} } = props;
@@ -52,7 +53,6 @@ export const ButtonRounded = (props) => {
     </div>
   );
 };
-
 export const StatusButton = (props) => {
   const { parentClassName, parentStyle, statusButtonProps = {} } = props;
   const {
@@ -105,6 +105,27 @@ export const StatusButton = (props) => {
         label={text}
         icon={iconElement}
         disabled={isLoading ? isLoading : false}
+        {...restProps}
+      />
+    </div>
+  );
+};
+
+export const SelectButton = (props) => {
+  const { parentClassName, parentStyle, selectButtonProps = {} } = props;
+  const { selectButtonClassName, value, onChange, options, ...restProps } =
+    selectButtonProps;
+
+  return (
+    <div
+      className={`defaultSelectButton ${parentClassName}`}
+      style={parentStyle}
+    >
+      <SelButton
+        className={` ${selectButtonClassName}`}
+        value={value}
+        onChange={onChange}
+        options={options}
         {...restProps}
       />
     </div>

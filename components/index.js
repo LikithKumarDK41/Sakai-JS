@@ -19,7 +19,6 @@ import {
 import { RadioBtn } from "@/components/radioButton";
 import { InputFile } from "@/components/upload";
 import { CardSpinner } from "@/components/spinner";
-import CustomCard from "./cardContent";
 
 import {
   Input,
@@ -39,8 +38,8 @@ import { DateTime, Calendar, DateTimeDisplay } from "@/components/date&time";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { ContentHeader, CustomHeader } from "@/components/header";
 import { Steps } from "@/components/steps";
-import { StepsCard } from "@/components/card";
-import { Panel } from "@/components/panel";
+import { StepsCard ,ContentCard} from "@/components/card";
+import { QuestionPanel, PanelList } from "@/components/panel";
 
 export {
   NormalTable,
@@ -80,9 +79,10 @@ export {
   StatusButton,
   LanguageSwitcher,
   ContentHeader,
-  CustomCard,
+  ContentCard,
   SelectButton,
   Steps,
   StepsCard,
-  Panel,
+  QuestionPanel,
+  PanelList
 };

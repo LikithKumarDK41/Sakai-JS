@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Button, CustomHeader, Panel, SelectButton, StatusButton, Steps, StepsCard } from "@/components";
+import { Button, CustomHeader, PanelList, QuestionPanel, SelectButton, StatusButton, Steps, StepsCard } from "@/components";
 
 const DemoPage = () => {
   const options = ['Off', 'On'];
@@ -212,9 +212,17 @@ const DemoPage = () => {
             parentClassName="flex justify-content-center"
           />
         </div>
-        <CustomHeader header="Panel" />
+        <div className="mt-2">      
+          <CustomHeader header="Question Panel" />
         <div className="mt-2">
-          <Panel panelsData={panelsData} />
+          <QuestionPanel panelsData={panelsData} />
+        </div>
+        </div>
+        <div className="mt-2">      
+        <CustomHeader header="Panel List" />
+        <div className="mt-2">
+          <PanelList panelsData={panelsData} />
+        </div>
         </div>
       </div>
     </>

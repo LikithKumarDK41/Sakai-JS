@@ -1,7 +1,8 @@
 "use client";
-import { ContentHeader, CustomHeader } from "@/components";
-import CustomCard from "@/components/cardContent";
-import React, { useState } from "react";
+import React from "react";
+
+import { ContentCard, ContentHeader } from "@/components";
+
 const Demo = () => {
   const contentData = [
     { title: "配布部数 :", description: "2,000部" },
@@ -11,10 +12,10 @@ const Demo = () => {
       description: "2024年10月10日",
     },
   ];
+
   return (
     <>
       <div className="mt-2">
-        {/* <CustomHeader header="Content Header" /> */}
         <ContentHeader
           headerText={"注文番号"}
           contentText={"1000105"}
@@ -23,10 +24,10 @@ const Demo = () => {
           status="warningStatus"
           parentClassName="header_class"
         />
-
-        <CustomCard parentClassName="custom-card" content={contentData} />
+        <ContentCard parentClassName="content-card" content={contentData}  />
       </div>
     </>
   );
 };
+
 export default Demo;

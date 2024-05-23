@@ -10,7 +10,7 @@ export const CustomCard = (props) => {
     <div className={`${parentClassName}`}>
       <div className="card">
         {props.content?.map((item, index) => (
-          <div className="card-text">
+          <div className="card-text" key={index}>
             <div className="grid">
               <div className="flex">
                 <div className="col-1">

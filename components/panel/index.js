@@ -9,8 +9,8 @@ export const Panel = ({ panelsData }) => {
         setActiveIndex((prevIndex) => (prevIndex === index ? -1 : index));
     };
 
-    const defaultHeaderTemplate  = (options,header) => {
-        const className = `${options.className} justify-content-space-between`;
+    const defaultHeaderTemplate  = (options,header,customClassName) => {
+        const className = `${options.className} ${customClassName} justify-content-space-between`;
 
         return (
             <div className={className}>
@@ -29,7 +29,7 @@ export const Panel = ({ panelsData }) => {
         <div>
             {panelsData.map((panel, index) => (
                 <PanelsList key={index} 
-                headerTemplate={(options) => panel.headerTemplate ? panel.headerTemplate(options) : defaultHeaderTemplate(options, panel.header)}
+                headerTemplate={(options) => panel.headerTemplate ? panel.headerTemplate(options) : defaultHeaderTemplate(options, panel.header,panel.headerClassName)}
                 header={panel.header} 
                 toggleable
                 collapsed={activeIndex !== index}

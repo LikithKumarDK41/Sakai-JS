@@ -16,11 +16,11 @@ export const StepsCard = (props) => {
 
     return (
         <div className={`${parentClassName}`} style={parentStyle}>
-            <Card className={`${stepCardClassName} flex justify-content-center align-items-center`} style={stepCardStyle}>
+            <Card className={`flex justify-content-center align-items-center ${stepCardClassName}`} style={stepCardStyle}>
                 {logo ? logo :<></>}
                 {topHeaderProps?.text && (
                     <>
-                        <CustomHeader customParentClassName="justify-content-center" header={ topHeaderProps.text} headerClass={topHeaderProps.className}/>
+                        <CustomHeader customParentClassName="justify-content-center" header={ topHeaderProps.text} headerClass={`text-xl font-bold ${topHeaderProps.className}`}/>
                     </>
                 )}
                 {imageProps?.src && (
@@ -31,7 +31,7 @@ export const StepsCard = (props) => {
                 {content ? content : <></>}
                 {bottomHeaderProps?.text && (
                     <>
-                        <CustomHeader header={bottomHeaderProps.text} headerClass={bottomHeaderProps.className}/>
+                        <CustomHeader header={bottomHeaderProps.text} headerClass={`text-xl font-bold ${bottomHeaderProps.className}`}/>
                     </>
                 )}
             </Card>

@@ -1,0 +1,35 @@
+.custom-card {
+  height: $cardHeight;
+  border: 0px 1px 1px 1px;
+  .card-text {
+    font-family: $cardFontStyle;
+    font-size: $cardFontSize;
+    font-weight: 350;
+    line-height: $cardLineHeight;
+    letter-spacing: $cardLetterSpacing;
+  }
+  .card-title {
+    font-family: $cardFontSize;
+    font-size: $cardFontSize;
+    font-weight: 350;
+    line-height: $cardLineHeight;
+    letter-spacing: $cardLetterSpacing;
+    text-align: right;
+  }
+  .card-description {
+    font-family: $cardFontStyle;
+    font-size: $cardFontSize;
+    font-weight: 700;
+    line-height: $cardLineHeight;
+    letter-spacing: $cardLetterSpacing;
+    text-align: left;
+  }
+}
+
+// .card-text {
+//   font-family: Noto Sans JP;
+//   font-size: 12px;
+//   font-weight: 350;
+//   line-height: 18px;
+//   letter-spacing: 0.04em;
+// }

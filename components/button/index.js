@@ -99,7 +99,7 @@ export const StatusButton = (props) => {
     <div className={`${statusClass} ${parentClassName} `} style={parentStyle}>
       <PrimeReactButton
         className={`${bg} ${hoverBg} ${custom || "custom-button"
-          }  ${buttonClass} font-medium border-noround`}
+          } font-medium border-noround ${buttonClass} `}
         label={text}
         icon={iconElement}
         disabled={isLoading ? isLoading : false}

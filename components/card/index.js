@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Card } from "primereact/card";
 
-import { CustomHeader } from "@/components/header";
+import { ContentHeader, CustomHeader } from "@/components/header";
 import { Button } from "@/components/button";
 
 export const StepsCard = (props) => {
@@ -79,3 +79,52 @@ export const ContentCard = (props) => {
   );
 };
 export default ContentCard;
+
+
+export const ContentCardDynamic = (props) => {
+    const { parentClassName, content} = props;
+    return (
+        <div className={`${parentClassName}`}>
+          {content.map((item, index) => (
+                <div key={index} className="mt-2">
+                    <ContentHeader
+                        headerText={item.headerText}
+                        contentText={item.contentText}
+                        buttonText={item.buttonText}
+                        buttonSymbol
+                        status={item.status}
+                        parentClassName="header_class"
+                    />
+                    <div className="card">
+                        <div className="card-text">
+                            <div className="grid">
+                            {item.titles?.map((title, idx) => (
+                                    <div className="flex" key={idx}>
+                                        <div className="col-1">
+                                            <span className="flex justify-end card-title">
+                                                {title}
+                                            </span>
+                                        </div>
+                                        <div className="col-11 card-description">
+                                            <span>{item.description[idx]}</span>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        <div className="link-style flex justify-end">
+                            <Button
+                                buttonProps={{
+                                    text: "詳細を見る",
+                                    link: true,
+                                    custom: "",
+                                }}
+                                parentClassName={"custom-details-button"}
+                            />
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </div>
+    );
+};

@@ -355,7 +355,7 @@ export const InputNumber = (props) => {
   );
 };
 
-export const Password=(props)=> {
+export const Password = (props) => {
   const {
     passwordParentClassName,
     passwordParentStyle,
@@ -678,3 +678,48 @@ export const InputGroups = (props) => {
     </div>
   );
 };
+
+
+export const OTPInput = (props) => {
+  const { parentClassName, parentStyle, otpInputProps = {} } = props;
+  const {
+    length,
+    otpClassName,
+    otpStyle,
+    ...restProps
+  } = otpInputProps;
+
+  const [otp, setOtp] = useState(new Array(length).fill(""));
+
+  const handleChange = (element, index) => {
+    const value = element.value;
+    if (/^[0-9]$/.test(value) || value === "") {
+      let newOtp = [...otp];
+      newOtp[index] = value;
+      setOtp(newOtp);
+
+      // Automatically focus the next input if a digit is entered
+      if (value && index < otp.length - 1) {
+        document.getElementById(`otp-input-${index + 1}`).focus();
+      }
+    }
+  };
+
+  return (
+    <div className={`${parentClassName}`} style={parentStyle}>
+      {otp.map((data, index) => (
+        <InputText
+          key={index}
+          id={`otp-input-${index}`}
+          type="text"
+          maxLength="1"
+          value={data}
+          onChange={(e) => handleChange(e.target, index)}
+          className={`${otpClassName}`}
+          style={{ width: "40px", height:"40px",marginRight: "10px", textAlign: "center" } || otpStyle}
+          {...restProps}
+        />
+      ))}
+    </div>
+  );
+}

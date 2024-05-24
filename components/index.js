@@ -30,6 +30,7 @@ import {
   DropdownSelect,
   InputGroups,
   Password,
+  OTPInput
 } from "@/components/input";
 import { NotFound } from "@/components/dataNotFound";
 import AudioRecorder from "@/components/audio";
@@ -38,7 +39,7 @@ import { DateTime, Calendar, DateTimeDisplay } from "@/components/date&time";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { ContentHeader, CustomHeader } from "@/components/header";
 import { Steps } from "@/components/steps";
-import { StepsCard ,ContentCard} from "@/components/card";
+import { StepsCard ,ContentCard, ContentCardDynamic} from "@/components/card";
 import { QuestionPanel, PanelList } from "@/components/panel";
 
 export {
@@ -84,5 +85,7 @@ export {
   Steps,
   StepsCard,
   QuestionPanel,
-  PanelList
+  PanelList,
+  OTPInput,
+  ContentCardDynamic
 };

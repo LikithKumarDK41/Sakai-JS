@@ -42,7 +42,6 @@ const Demo = () => {
       checked: isChecked,
       disabled: false,
       style: {},
-      labelClass: "my-label-class",
       linkLabel: "Link Label",
     },
     parentClass: "custom-checkbox",

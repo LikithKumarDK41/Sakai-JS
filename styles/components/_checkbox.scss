@@ -1,27 +1,14 @@
-// .custom-checkbox{
-//     .p-checkbox .p-checkbox-box.p-highlight{
-//         background: var(--primary-color);
-//         border:var(--primary-color);
-//     }
-//     .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-highlight:hover{
-//         background: var(--primary-color);
-//         border:var(--primary-color);
-//     }
-// }
-.custom-checkbox .p-checkbox .p-checkbox-box {
-  border-radius: 50%; /* Makes the checkbox itself rounded */
-}
+.custom-checkbox {
+  .p-checkbox-box {
+    height: $checkboxheight;
+  }
 
-.custom-checkbox .p-checkbox .p-checkbox-box.p-highlight {
-  background: var(--primary-color);
-  border: var(--primary-color);
-  border-radius: 50%; /* Ensures the highlighted state is also rounded */
-}
-
-.custom-checkbox
-  .p-checkbox:not(.p-checkbox-disabled)
-  .p-checkbox-box.p-highlight:hover {
-  background: var(--primary-color);
-  border: var(--primary-color);
-  border-radius: 50%; /* Ensures the hovered state is also rounded */
+  .p-checkbox .p-checkbox-box.p-highlight {
+    background: var(--primary-color);
+    border: var(--primary-color);
+  }
+  .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-highlight:hover {
+    background: var(--primary-color);
+    border: var(--primary-color);
+  }
 }

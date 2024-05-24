@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 
 import { ContentCard, ContentHeader, NormalCheckBox } from "@/components";
+import { RadioBtn } from "@/components";
 
 const CombinedContent = ({ header, content }) => {
   return (
@@ -20,6 +21,11 @@ const CombinedContent = ({ header, content }) => {
 };
 
 const Demo = () => {
+  const [selectedValue, setSelectedValue] = useState(null);
+
+  const handleRadioChange = (e) => {
+    setSelectedValue(e.value);
+  };
   const [isChecked, setIsChecked] = useState(false);
 
   const handleCheckboxChange = () => {
@@ -39,9 +45,7 @@ const Demo = () => {
       labelClass: "my-label-class",
       linkLabel: "Link Label",
     },
-    parentClass: "my-parent-class",
-    parentStyle: {},
-    custom: "my-custom-class",
+    parentClass: "custom-checkbox",
   };
 
   const contentData = [
@@ -71,7 +75,7 @@ const Demo = () => {
       contentText: "1000106",
       buttonText: "ピッキング",
       buttonSymbol: true,
-      status: "warningStatus",
+      status: "goldStatus",
       parentClassName: "header_class",
     },
   ];
@@ -89,8 +93,19 @@ const Demo = () => {
 
   return (
     <div>
-      <div>{combinedComponents}</div>
+      <RadioBtn
+        parentClass="custom-radioBtn"
+        parentStyle={{ margin: "10px 0" }}
+        radioBtnProps={{
+          inputId: "option1",
+          name: "Option 1",
+          value: "option1",
+          onChange: handleRadioChange,
+          checked: selectedValue === "option1",
+        }}
+      />
       <NormalCheckBox {...checkboxProps} />
+      <div>{combinedComponents}</div>
     </div>
   );
 };

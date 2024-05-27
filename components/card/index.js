@@ -18,7 +18,7 @@ export const StepsCard = (props) => {
 
     return (
         <div className={`${parentClassName}`} style={parentStyle}>
-            <Card className={`flex justify-content-center align-items-center ${stepCardClassName}`} style={stepCardStyle}>
+            <Card className={`flex justify-content-center align-items-center border-dashed border-3	border-primary ${stepCardClassName}`} style={stepCardStyle}>
                 {logo ? logo :<></>}
                 {topHeaderProps?.text && (
                     <>
@@ -95,7 +95,7 @@ export const ContentCardDynamic = (props) => {
                         status={item.status}
                         parentClassName="header_class"
                     />
-                    <div className="card">
+                    <div className="card border-dotted-left border-1 border-500">
                         <div className="card-text">
                             <div className="grid">
                             {item.titles?.map((title, idx) => (
@@ -118,6 +118,7 @@ export const ContentCardDynamic = (props) => {
                                     text: "詳細を見る",
                                     link: true,
                                     custom: "",
+                                    onClick:item.linkClick
                                 }}
                                 parentClassName={"custom-details-button"}
                             />

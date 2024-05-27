@@ -67,6 +67,7 @@ const DemoPage = () => {
           Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
       ),
+      headerClassName:"border-round-3xl"
     },
     {
       header: "H2",
@@ -75,10 +76,35 @@ const DemoPage = () => {
           Another content goes here.
         </p>
       ),
+      headerClassName:"border-round-3xl"
     },
     // Add more panels as needed
   ];
-
+  const panelsData1 = [
+    {
+      header: "H1",
+      content: (
+        <p className="m-0">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      ),
+      icon:<span><i className="pi pi-calendar"></i></span>,
+      headerClassName:"border-noround	",
+    },
+    {
+      header: "H2",
+      content: (
+        <p className="m-0">
+          Another content goes here.
+        </p>
+      ),
+      icon:<span><i className="pi pi-android"></i></span>,
+    },
+    // Add more panels as needed
+  ];
 
   const contentData = [
     {
@@ -94,7 +120,7 @@ const DemoPage = () => {
       titles: ["Another Title 1", "Another Title 2", "Another Title 3"],
       description: ["Description 1", "Description 2", "Description 3"],
       headerText:"注文番号",
-      contentText:"1000105",
+      contentText:"1000106",
       buttonSymbol:true,
       buttonText:"ピッキング",
       status:"goldStatus"
@@ -220,7 +246,7 @@ const DemoPage = () => {
         <div className="mt-2">
           <StepsCard stepsCardProps={{
             topHeaderProps: {
-              text: "Sandeep",
+              text: "10月10日13:00〜14:00",
               className: "m-0"
             },
             content: <div className="flex justify-content-center"><p>配布員とのマッチングを行なっています。</p></div>,
@@ -244,8 +270,13 @@ const DemoPage = () => {
         <div className="mt-2">
           <CustomHeader header="Panel List" />
           <div className="mt-2">
+          <CustomHeader header="Without icon" />
             <PanelList panelsData={panelsData} />
           </div>
+          <div className="mt-2">
+          <CustomHeader header="With icon" />
+            <PanelList panelsData={panelsData1} />
+            </div>
         </div>
         <div className="mt-2">
         <CustomHeader header="Otp" />

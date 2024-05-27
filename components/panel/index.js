@@ -60,13 +60,14 @@ export const PanelList = ({ parentClassName,panelsData }) => {
         setActiveIndex((prevIndex) => (prevIndex === index ? -1 : index));
     };
 
-    const defaultHeaderTemplate = (options, header, customClassName, index) => {
-        const className = `${options.className} justify-content-space-between border-round-3xl ${customClassName}`;
+    const defaultHeaderTemplate = (options, header, customClassName, index,icon) => {
+        const className = `${options.className} justify-content-space-between ${customClassName}`;
         const isCollapsed = activeIndex !== index;
 
         return (
             <div className={className}>
                 <div className="flex align-items-center gap-2">
+                    {icon ? icon :<></>}
                     <span className="font-bold">{header}</span>
                 </div>
                 <div>
@@ -98,7 +99,8 @@ export const PanelList = ({ parentClassName,panelsData }) => {
                                 options,
                                 panel.header,
                                 panel.headerClassName,
-                                index
+                                index,
+                                panel.icon
                             )
                     }
                     header={panel.header}
@@ -107,7 +109,7 @@ export const PanelList = ({ parentClassName,panelsData }) => {
                     collapsed={activeIndex !== index}
                     onToggle={() => handleToggle(index)}
                 >
-                    <div className="">
+                    <div>
                         {panel.content}
                     </div>
                 </PanelsList>

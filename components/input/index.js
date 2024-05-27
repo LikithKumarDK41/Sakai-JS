@@ -691,16 +691,39 @@ export const OTPInput = (props) => {
 
   const [otp, setOtp] = useState(new Array(length).fill(""));
 
+ 
   const handleChange = (element, index) => {
     const value = element.value;
-    if (/^[0-9]$/.test(value) || value === "") {
-      let newOtp = [...otp];
+    let newOtp = [...otp];
+    
+    // If a digit is added
+    if (/^[0-9]$/.test(value)) {
       newOtp[index] = value;
       setOtp(newOtp);
-
+      
       // Automatically focus the next input if a digit is entered
-      if (value && index < otp.length - 1) {
+      if (index < length - 1) {
         document.getElementById(`otp-input-${index + 1}`).focus();
+      }
+    } 
+    // If a digit is removed
+    else if (value === "") {
+      newOtp.splice(index, 1);
+      newOtp.push("");
+      setOtp(newOtp);
+      
+      // Move focus back to the previous input if backspace is pressed and the current input is empty
+      if (index > 0) {
+        document.getElementById(`otp-input-${index - 1}`).focus();
+      }
+    }
+  }
+
+  // function ensures that focus moves back to the previous input when the Backspace key is pressed and the current input is empty.
+  const handleKeyDown = (event, index) => {
+    if (event.key === "Backspace" && otp[index] === "") {
+      if (index > 0) {
+        document.getElementById(`otp-input-${index - 1}`).focus();
       }
     }
   };
@@ -714,7 +737,9 @@ export const OTPInput = (props) => {
           type="text"
           maxLength="1"
           value={data}
+          inputMode="numeric"
           onChange={(e) => handleChange(e.target, index)}
+          onKeyDown={(e) => handleKeyDown(e, index)}
           className={`${otpClassName}`}
           style={{ width: "40px", height:"40px",marginRight: "10px", textAlign: "center" } || otpStyle}
           {...restProps}

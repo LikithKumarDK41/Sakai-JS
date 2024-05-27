@@ -47,7 +47,7 @@ export const ContentCard = (props) => {
 
   return (
     <div className={`${parentClassName}`}>
-      <div className="card">
+      <div className="card border-dotted-left border-1 border-500">
         {content?.map((item, index) => (
           <div className="card-text" key={index}>
             <div className="grid">
